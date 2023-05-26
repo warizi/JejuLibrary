@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    
+    <title>Jeju Library</title>
+</head>
+<body>
+    <!-- 헤더 -->
+    <div class="top_section">
+        <!-- 로그인 시 변경 사항 -->
+        <!-- 변경 전 -->
+        <div class="top_section_container">
+            <button class="login_A"><a href="#">비대면로그인</a></button>
+            <!-- 로그인 페이지 이동 -->
+            <button class="login_B"><a href="#">로그인</a></button>
+        </div>
+        <!-- 변경 후 -->
+        <!-- 아직 변경 후 ui 모름 -->
+    </div>
+    <header>
+        <div class="header_nav_container">
+            <h1>
+                <a href="#">
+                    <img id="main_logo" src="../static/images/index/logo.png" alt="제주특별자치도 공공도서관">
+                </a>
+            </h1>
+            <!-- 네비게이션 -->
+            <div class="not_all_menu">
+                <div class="back_btn">
+                    닫기
+                </div>
+                <nav>
+                    <div class="nav_title nav1">
+                        <h3>
+                            <a href="#">자료검색</a>
+                        </h3>
+                        <!-- 하위 nav -->
+                        <div class="depth_nav">
+                            <ul>
+                                <li><a href="#">자료검색</a></li>
+                                <li><a href="#">희망도서 신청</a></li>
+                                <li><a href="#">희망도서 바로대출</a></li>
+                                <li><a href="#">대출조회</a></li>
+                                <li><a href="#">책두레</a></li>
+                                <li><a href="#">신간도서</a></li>
+                                <li><a href="#">추천도서</a></li>
+                                <li><a href="#">(한라)AI도서추천</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav_title nav2">
+                        <h3>
+                            <a href="#">도서관이용</a>
+                        </h3>
+                        <!-- 하위 nav -->
+                        <div class="depth_nav">
+                            <ul>
+                                <li><a href="#">도서관별 운영시간</a></li>
+                                <li><a href="#">도서관별 휴관일</a></li>
+                                <li><a href="#">도서관별 연락처</a></li>
+                                <li><a href="#">전체도서관 위치</a></li>
+                                <li><a href="#">전체 장서현황</a></li>
+                                <li><a href="#">회원가입안내</a></li>
+                                <li><a href="#">대출/반납안내</a></li>
+                                <li><a href="#">타관반납서비스</a></li>
+                                <li><a href="#">모바일 라이브러리 서비스</a></li>
+                                <li><a href="#">책나래</a></li>
+                                <li><a href="#">책바다</a></li>
+                                <li><a href="#">자료납본제출안내</a></li>
+                                <li><a href="#">스마트도서관안내</a></li>
+                                <li><a href="#">스마트K도서관</a></li>
+                                <li><a href="#">도서관 이용 약관</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav_title nav3">
+                        <h3>
+                            <a href="#">행사/프로그램</a>
+                        </h3>
+                        <div class="depth_nav">
+                            <ul>
+                                <li><a href="#">도서관 프로그램 신청</a></li>
+                                <li><a href="#">행사갤러리</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav_title nav4">
+                        <h3>
+                            <a href="#">열린공간</a>
+                        </h3>
+                        <!-- 하위 nav -->
+                        <div class="depth_nav">
+                            <ul>
+                                <li><a href="#">새소식</a></li>
+                                <li><a href="#">보도자료</a></li>
+                                <li><a href="#">자주하는질문</a></li>
+                                <li><a href="#">도서관 바란다</a></li>
+                                <li><a href="#">업무계획</a></li>
+                                <li><a href="#">자료실</a></li>
+                                <li><a href="#">자원봉사안내</a></li>
+                                <li><a href="#">2023서귀포시민의책 추천</a></li>
+                                <li><a href="#">칭찬합시다</a></li>
+                                <li><a href="#">분실물 찾기</a></li>
+                                <li><a href="#">프로그램 강사모집</a></li>
+                                <li><a href="#">카드뉴스</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav_title nav5">
+                        <h3>
+                            <a href="#">도서관소개</a>
+                        </h3>
+                        <!-- 하위 nav -->
+                        <div class="depth_nav">
+                            <ul>
+                                <li><a href="#">한라도서관</a></li>
+                                <li><a href="#">우당도서관</a></li>
+                                <li><a href="#">탐라도서관</a></li>
+                                <li><a href="#">제주기적의도서관</a></li>
+                                <li><a href="#">애월도서관</a></li>
+                                <li><a href="#">조천읍도서관</a></li>
+                                <li><a href="#">한경도서관</a></li>
+                                <li><a href="#">삼매봉도서관</a></li>
+                                <li><a href="#">중앙도서관</a></li>
+                                <li><a href="#">동부도서관</a></li>
+                                <li><a href="#">서부도서관</a></li>
+                                <li><a href="#">서귀포기적의도서관</a></li>
+                                <li><a href="#">성산일출도서관</a></li>
+                                <li><a href="#">안덕산방도서관</a></li>
+                                <li><a href="#">표선도서관</a></li>
+                                <li><a href="#">행정서비스현장</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav_title nav6">
+                        <h3>
+                            <a href="#">나만의 도서관</a>
+                        </h3>
+                        <!-- 하위 nav -->
+                        <div class="depth_nav">
+                            <ul>
+                                <li><a href="#">대출회원 정보</a></li>
+                                <li><a href="#">대출조회</a></li>
+                                <li><a href="#">희망도서 신청</a></li>
+                                <li><a href="#">대출예약현황</a></li>
+                                <li><a href="#">타관대출현황</a></li>
+                                <li><a href="#">관심도서</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <img class="side_menu_btn" src="../static/images/icon/menu.png" alt="사이드 메뉴">
+        </div>
+        <!-- search -->
+        <div class="search">
+            <div class="search_container">
+                <div class="search_info_container search_box">
+                    <img src="../static/images/index/img.png" alt="책 사진">
+                    <h3>
+                        책과 문화를 즐기는
+                        <br>
+                        <strong>제주특별자치도 공공도서관</strong>
+                    </h3>
+                    <p>
+                        제주특별자치도 공공도서관에 오신 것을 환영합니다.
+                        <br>
+                        책과 문화를 함께 즐기세요!
+                    </p>
+                </div>
+                <div class="search_input_container search_box">
+                    <img src="../static/images/index/sch_img.png" alt="책 사진">
+                    <h3>
+                        원하시는
+                        <br>
+                        <strong>도서명을 검색하세요</strong>
+                    </h3>
+                    <form action="#">
+                        <input type="text" id="search">
+                        <button id="search_sumit_btn">
+                            <img src="../static/images/icon/magnifying-glass.png" alt="검색하기">
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- quick menu -->
+        <div class="quick_menu">
+            <a id="quick_con_bg1" href="#">
+                <div id="quick_menu_bg1"></div>
+                <p>도서관 <br> 이용안내</p>
+            </a>
+            <a id="quick_con_bg2" href="#">
+                <div id="quick_menu_bg2"></div>
+                <p>도서관 <br> 소개</p>
+            </a>
+            <button id="top_btn">
+                TOP
+            </button>
+        </div>
+    </header>
+    <!-- 메인 -->
+    <main>
+        <!-- menu -->
+        <section class="menu_section">
+            <div class="menu_item_container">
+                <a href="#">
+                <img src="../static/images/index/icon01.svg" alt="대출조회">
+                <p>
+                   대출조회
+                </p>
+                </a>
+            </div>
+            <div class="menu_item_container">
+                <a href="#">
+                <img src="../static/images/index/icon02.svg" alt="희망도서신청">
+                <p>
+                    희망도서신청
+                </p>
+                </a>
+            </div>
+            <div class="menu_item_container">
+                <a href="#">
+                <img src="../static/images/index/icon03.svg" alt="희망도서 바로대출신청">
+                <p>
+                    희망도서
+                    <br>
+                    바로대출신청
+                </p>
+                </a>
+            </div>
+            <div class="menu_item_container">
+                <a href="#">
+                <img src="../static/images/index/icon04.svg" alt="신간도서">
+                <p>
+                   신간도서
+                </p>
+                </a>
+            </div>
+            <div class="menu_item_container">
+                <a href="#">
+                <img src="../static/images/index/icon05.svg" alt="디지털자료실 좌석예약">
+                <p>
+                    디지털자료실
+                    <br>
+                    좌석예약
+                </p>
+                </a>
+            </div>
+            <div class="menu_item_container">
+                <a href="#">
+                <img src="../static/images/index/icon06.svg" alt="전자도서관">
+                <p>
+                    전자도서관
+                </p>
+                </a>
+            </div>
+            <div class="menu_item_container">
+                <a href="#">
+                <img src="../static/images/index/icon07.svg" alt="스마트K도서관">
+                <p>
+                    스마트K도서관
+                </p>
+                </a>
+            </div>
+            <div class="menu_item_container">
+                <a href="#">
+                <img src="../static/images/index/icon08.svg" alt="원문DB">
+                <p>
+                    원문DB
+                </p>
+                </a>
+            </div>
+            <div class="menu_item_container">
+                <a href="#">
+                <img src="../static/images/index/icon09.svg" alt="추천도서">
+                <p>
+                    추천도서
+                </p>
+                </a>
+            </div>
+        </section>
+        <!-- news -->
+        <section class="news_section">
+            <div class="news_title">
+                <h2>새소식</h2>
+            </div>
+            <div class="news_more">
+                <p>
+                    <a href="#">
+                        <img src="../static/images/icon/more_black.png" alt="" width="20px">
+                    </a>
+                </p>
+            </div>
+            <div class="news_container">
+                <!-- 새소식 빵꾸 최대 6개 노출 -->
+                <!-- Component item start -->
+                    <!-- 
+                        <div class="news_item">
+                            <span>[도서관이름 간략하게 최대 5글자]</span>
+                            <a href="#">[새소식 제목 넣어주세요.]</a>
+                            <span>[날짜 넣어주세요. 예시: 2023-05-23]</span>
+                        </div> 
+                    -->
+                <!-- Component item end -->
+                <div class="news_item">
+                    <span>제주시기적</span>
+                    <a href="#">제주시기적의도서관 6월 책나라프로그램 안내</a>
+                    <span>2023-05-23</span>
+                </div>
+                <div class="news_item">
+                    <span>애월</span>
+                    <a href="#">애월도서관 상반기 문화학교 프로그램(어린이)</a>
+                    <span>2023-05-23</span>
+                </div>
+                <div class="news_item">
+                    <span>조천읍</span>
+                    <a href="#">조천읍도서관 대체공휴일(5월 29일) 휴관 안내</a>
+                    <span>2023-05-22</span>
+                </div>
+                <div class="news_item">
+                    <span>탐라</span>
+                    <a href="#">탐라도서관 대체공휴일(5월29일) 휴관 안내</a>
+                    <span>2023-05-22</span>
+                </div>
+                <div class="news_item">
+                    <span>중앙</span>
+                    <a href="#">스마트K도서관 미디어아카데미</a>
+                    <span>2023-05-22</span>
+                </div>
+                <div class="news_item">
+                    <span>중앙</span>
+                    <a href="#">재능기부 프로그램 시니어, 다시 꽃피다</a>
+                    <span>2023-05-22</span>
+                </div>
+            </div>
+        </section>
+        <!-- slide -->
+        <section class="slide_section">
+            <!-- 슬라이드 빵꾸 갯수 제한 없음 (화면 노출 4개)-->
+            <ul class="slide_container">
+                <!-- Component item start -->
+                <!-- 
+                    <li class="slide_item">
+                        <a href="[해당페이지 url 넣어주세요.]">
+                            <img src="[해당 이미지 경로 넣어주세요.]" alt="[해당 슬라이드의 정보를 간략히 넣어주세요. 예시: 비대면 도서대출 정회원 가입 서비스 개시]">
+                            <span>[도서관 이름 간략하게 넣어주세요. 최대 3글자]</span>
+                        </a>
+                    </li>
+                 -->
+                <!-- Component item end -->
+                <li class="slide_item">
+                    <a href="#">
+                        <img src="../static/images/index/event/2c3bdd65-cd70-453c-8611-0635b70149ac.png" alt="슬라이드 이미지">
+                        <span>삼매봉</span>
+                    </a>
+                </li>
+                <li class="slide_item">
+                    <a href="#">
+                        <img src="../static/images/index/event/03da2cea-f515-4731-9467-848cbad2e220.png" alt="슬라이드 이미지">
+                        <span>탐라</span>
+                    </a>
+                </li>
+                <li class="slide_item">
+                    <a href="#">
+                        <img src="../static/images/index/event/5b6fd3e0-2bd0-456a-9e8b-670c3b2a18c5.png" alt="슬라이드 이미지">
+                        <span>한라</span>
+                    </a>
+                </li>
+                <li class="slide_item">
+                    <a href="#">
+                        <img src="../static/images/index/event/5e132190-b6f7-4d2f-b039-04806a035fc0.png" alt="슬라이드 이미지">
+                        <span>아기천사</span>
+                    </a>
+                </li>
+                <li class="slide_item">
+                    <a href="#">
+                        <img src="../static/images/index/event/03da2cea-f515-4731-9467-848cbad2e220.png" alt="슬라이드 이미지">
+                        <span>탐라</span>
+                    </a>
+                </li>
+                <li class="slide_item">
+                    <a href="#">
+                        <img src="../static/images/index/event/5b6fd3e0-2bd0-456a-9e8b-670c3b2a18c5.png" alt="슬라이드 이미지">
+                        <span>한라</span>
+                    </a>
+                </li>
+                <li class="slide_item">
+                    <a href="#">
+                        <img src="../static/images/index/event/5b6fd3e0-2bd0-456a-9e8b-670c3b2a18c5.png" alt="슬라이드 이미지">
+                        <span>한라</span>
+                    </a>
+                </li>
+                <li class="slide_item">
+                    <a href="#">
+                        <img src="../static/images/index/event/5e132190-b6f7-4d2f-b039-04806a035fc0.png" alt="슬라이드 이미지">
+                        <span>아기천사</span>
+                    </a>
+                </li>
+                <li class="slide_item">
+                    <a href="#">
+                        <img src="../static/images/index/event/5e132190-b6f7-4d2f-b039-04806a035fc0.png" alt="슬라이드 이미지">
+                        <span>아기천사</span>
+                    </a>
+                </li>
+                <li class="slide_item">
+                    <a href="#">
+                        <img src="../static/images/index/event/03da2cea-f515-4731-9467-848cbad2e220.png" alt="슬라이드 이미지">
+                        <span>탐라</span>
+                    </a>
+                </li>
+                <li class="slide_item">
+                    <a href="#">
+                        <img src="../static/images/index/event/5b6fd3e0-2bd0-456a-9e8b-670c3b2a18c5.png" alt="슬라이드 이미지">
+                        <span>한라</span>
+                    </a>
+                </li>
+                <li class="slide_item">
+                    <a href="#">
+                        <img src="../static/images/index/event/5b6fd3e0-2bd0-456a-9e8b-670c3b2a18c5.png" alt="슬라이드 이미지">
+                        <span>한라</span>
+                    </a>
+                </li>
+                <li class="slide_item">
+                    <a href="#">
+                        <img src="../static/images/index/event/5e132190-b6f7-4d2f-b039-04806a035fc0.png" alt="슬라이드 이미지">
+                        <span>아기천사</span>
+                    </a>
+                </li>
+                <li class="slide_item">
+                    <a href="#">
+                        <img src="../static/images/index/event/03da2cea-f515-4731-9467-848cbad2e220.png" alt="슬라이드 이미지">
+                        <span>탐라</span>
+                    </a>
+                </li>
+                <li class="slide_item">
+                    <a href="#">
+                        <img src="../static/images/index/event/5b6fd3e0-2bd0-456a-9e8b-670c3b2a18c5.png" alt="슬라이드 이미지">
+                        <span>한라</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <div class="slide_btn">
+            <button class="prev_btn btn_bg">
+                <img id="prev_slide_btn" src="../static/images/icon/arrow1_left.png" alt="이전">
+            </button>
+            <span class="current_num">1</span>
+            <span>/</span>
+            <span class="total_num">4</span>
+            <button class="next_btn btn_bg">
+                <img id="next_slide_btn" src="../static/images/icon/arrow1_right.png" alt="다음">
+            </button>
+        </div>
+        <!-- event -->
+        <section class="event_section">
+            <div class="event_bg">
+                <div class="event_container">
+                    <a href="#">
+                        <img src="../static/images/icon/more_black.png" alt="" width="20px">
+                    </a>
+                    <h3>
+                        일상의 쉼표,
+                        <br>
+                        <strong>문화행사</strong>
+                    </h3>
+                    <!-- 이벤트 빵꾸 최대 5개 -->
+                    <ul class="event_list_container">
+                        <!-- Component item start -->
+                        <!-- 
+                            <li class="event_item">
+                                <a href="[경로 url 넣어주세요.]">
+                                    <p>[이벤트 제목 넣어주세요.]</p>
+                                    <span class="event_date">일시 [날짜 넣어주세요. 예시: 2023-06-10]</span>
+                                    <span class="event_tag">[도서관 이름 넣어주세요. 풀네임]</span>
+                                </a>
+                            </li> 
+                        -->
+                        <!-- Component item end -->
+                        <li class="event_item">
+                            <a href="#">
+                                <p>애월도서관 "나만의 음악콘텐츠 만들기" 프로그램 참여자 모집(1-2학년)</p>
+                                <span class="event_date">일시 2023-06-10</span>
+                                <span class="event_tag">애월도서관</span>
+                            </a>
+                        </li>
+                        <li class="event_item">
+                            <a href="#">
+                                <p>애월도서관'그림책과 하브루타의 만남' 참여자 모집 (3~4학년)</p>
+                                <span class="event_date">일시 2023-06-10</span>
+                                <span class="event_tag">애월도서관</span>
+                            </a>
+                        </li>
+                        <li class="event_item">
+                            <a href="#">
+                                <p>상상톡톡문학놀이(초등3~5)</p>
+                                <span class="event_date">일시 2023-06-04</span>
+                                <span class="event_tag">제주시기적의도서관</span>
+                            </a>
+                        </li>
+                        <li class="event_item">
+                            <a href="#">
+                                <p>책이랑 꿈이랑(초등1~2)</p>
+                                <span class="event_date">일시 2023-06-03</span>
+                                <span class="event_tag">제주시기적의도서관</span>
+                            </a>
+                        </li>
+                        <li class="event_item">
+                            <a href="#">
+                                <p>한라도서관 창의력 쑥쑥! 사고력 쭉쭉! 코딩 스크래치(2기)</p>
+                                <span class="event_date">일시 2023-06-07</span>
+                                <span class="event_tag">한라도서관</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- 푸터 -->
+    <footer>
+        <div class="footer_top">
+            <div class="footer_top_container">
+                <ul class="footer_link_container">
+                   <li><a href="#">책바다</a></li> 
+                   <li><a href="#">책나래</a></li> 
+                   <li><a href="#">책읽는서귀포시</a></li> 
+                   <li><a href="#">책이음서비스</a></li> 
+                   <li><a href="#">책섬,제주</a></li> 
+                </ul>
+                <div class="site_list">
+                    <span>관련사이트</span>
+                    <div class="icon_a">&uarr;</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="footer_phone">
+                <h3>도서관 연락처</h3>
+                <div class="phone_item">
+                    <h4>한라도서관</h4>
+                    <span>064-710-8666</span>
+                </div>
+                <div class="phone_item">
+                    <h4>조천읍도서관</h4>
+                    <span>064-728-1505</span>
+                </div>
+                <div class="phone_item">
+                    <h4>서부도서관</h4>
+                    <span>064-739-9862</span>
+                </div>
+                <div class="phone_item">
+                    <h4>우당도서관</h4>
+                    <span>064-728-1503</span>
+                </div>
+                <div class="phone_item">
+                    <h4>한경도서관</h4>
+                    <span>064-728-1508</span>
+                </div>
+                <div class="phone_item">
+                    <h4>서귀포기적의도서관</h4>
+                    <span>064-732-3251</span>
+                </div>
+                <div class="phone_item">
+                    <h4>탐라도서관</h4>
+                    <span>064-728-1506</span>
+                </div>
+                <div class="phone_item">
+                    <h4>삼매봉도서관</h4>
+                    <span>064-733-1524</span>
+                </div>
+                <div class="phone_item">
+                    <h4>성산일출도서관</h4>
+                    <span>064-783-4227</span>
+                </div>
+                <div class="phone_item">
+                    <h4>제주시기적의도서관</h4>
+                    <span>064-728-1504</span>
+                </div>
+                <div class="phone_item">
+                    <h4>중앙도서관</h4>
+                    <span>064-739-1516</span>
+                </div>
+                <div class="phone_item">
+                    <h4>안덕산방도서관</h4>
+                    <span>064-794-2489</span>
+                </div>
+                <div class="phone_item">
+                    <h4>애월도서관</h4>
+                    <span>064-728-1507</span>
+                </div>
+                <div class="phone_item">
+                    <h4>동부도서관</h4>
+                    <span>064-767-1524</span>
+                </div>
+                <div class="phone_item">
+                    <h4>표선도서관</h4>
+                    <span>064-787-5488</span>
+                </div>
+            </div>
+            <div class="footer_address">
+                <a href="#">개인정보처리방침</a>
+                <br>
+                <a href="#">한라도서관 이용규정</a>
+                <address>Copyright©제주특별자치도 공공도서관. <br> All rights reserced</address>
+            </div>
+        </div>
+    </footer>
+    <script src="../static/script/main.js"></script>
+</body>
+</html>
