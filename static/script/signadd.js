@@ -1,67 +1,37 @@
-const id = document.querySelector('#id');
-const pw = document.querySelector('#pw');
-const username = document.querySelector('#confirm_username');
+
 const selectYear = document.querySelector('#birth_year');
 const selectMonth = document.querySelector('#birth_month');
 const selectDay = document.querySelector('#birth_day');
 const telFirst = document.querySelector('#tel_first');
 const telMiddle = document.querySelector('#tel_middle');
 const telLast = document.querySelector('#tel_last');
-const emailFirst = document.querySelector('#email_first');
-const emailLast = document.querySelector('#email_last');
-const confirmPw = document.querySelector('#confirm_pw');
 const zonecodeInput = document.querySelector('#sample4_postcode');
 const roadAddressInput = document.querySelector('#sample4_roadAddress');
 const jibunAddressInput = document.querySelector('#sample4_jibunAddress');
 const detailAddressInput = document.querySelector('#sample4_detailAddress');
 const extraAddressInput = document.querySelector('#sample4_extraAddress');
 const alertText = document.querySelector('#confirm_pw_alert');
-const selectEmail = document.querySelector('#select_email');
+
 
 const submit = document.querySelector('#signup-form');
 
 submit.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = {
-        id: id.value,
-        pw: pw.value,
-        username: username.value,
         birth: selectYear.value + selectMonth.value + selectDay.value,
         tel: telFirst.value + telMiddle.value + telLast.value,
-        email: emailFirst.value + '@' + emailLast.value,
         zonecode: zonecodeInput.value,
         roadAddress: roadAddressInput.value,
         jibunAddress: jibunAddressInput.value,
         detailAddress: detailAddressInput.value,
         extraAddress: extraAddressInput.value,
     };
-    if(id.value.length < 2) {//아이디 글자 수 제한 
-        alert('아이디를 확인해주세요.');
-        return
-    }
-    if(pw.value.length < 4) {//패스워드 글자 수 제한
-        alert('비밀번호를 확인해 주세요.');
-        return
-    }
-    if(pw.value !== confirmPw.value) {
-        alert('비밀번호가 일치하지 않습니다.');
-        return
-    }
-    if(username.value.length === 0) {
-        alert('이름을 확인해주세요.');
-        return
-    }
     if(!Number(selectYear.value) || !Number(selectMonth.value) || !Number(selectDay.value)) {
         alert('생년월일을 확인해주세요.');
         return
     }
     if(telFirst.value.length < 3 || telMiddle.value.length < 4 || telLast.value.length < 4) {
         alert('연락처를 확인해주세요.');
-        return
-    }
-    const emailTest = /^[^\s@]+@[^\s@]+\.[A-Za-z]+$/;
-    if(!emailTest.test(emailFirst.value + '@' + emailLast.value)){
-        alert('이메일을 확인해주세요.');
         return
     }
     // 주소 유효성검사 작성할 것.
@@ -87,18 +57,6 @@ submit.addEventListener('submit', (e) => {
     // console.log('주소 :', zonecodeInput.value, roadAddressInput.value, jibunAddressInput.value, detailAddressInput.value, extraAddressInput.value);
 });
 
-confirmPw.addEventListener('input', (e) => {
-    const value = e.target.value;
-    if (value.length === 0) {
-        alertText.textContent = "";
-    } else if (value === pw.value) {
-        alertText.textContent = '비밀번호가 일치합니다.'
-        alertText.style.color = 'green';
-    } else {
-        alertText.textContent = '비밀번호가 일치하지 않습니다.'
-        alertText.style.color = 'red';
-    }
-});
 
 
 let yearFirst = true;
@@ -202,12 +160,6 @@ telLast.addEventListener('input', (e) => {
         telLast.blur();
     }
 });
-
-
-selectEmail.addEventListener('change', (e) => {
-    const value = e.target.value;
-    emailLast.value = value;
-})
 
 
 

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../static/css/layout.css">
     <link rel="stylesheet" href="../static/css/signup.css">
     
-    <title>회원가입 - 제주특별자치도 공공도서관</title>
+    <title>sns추가정보 - 제주특별자치도 공공도서관</title>
 </head>
 <body>
     <header>
@@ -206,30 +206,22 @@
             <h2>마이페이지</h2>
         </section>
         <section class="main_contents">
-            <!-- SNS 회원가입 추가 입력 시 변경사항 -->
-            <!-- goole sns 가입 시 리다이렉션페이지는 login페이지와 동일하지만 페이지title, id, pw, 이름, email input태그를 입력불가로 변경합니다. -->
-            
-            <!-- 페이지 title 변경사항 -->
-            <h2>회원가입</h2>
-                <!-- 
-                    <h2>구글 회원가입 추가정보</h2>
-                 -->
-            <!-- 페이지 title 변경사항 끝 -->
+            <h2>SNS 회원가입 추가정보</h2>
             <ul class="breadcrumb">
                 <li><a href="#">HOME</a></li>
                 <li><a class="breadcrumb_item" href="#">마이페이지</a></li>
-                <li><a class="breadcrumb_item" href="#">회원가입</a></li>
+                <li><a class="breadcrumb_item" href="#">SNS 회원가입 추가정보</a></li>
             </ul>
             <div class="sign_up">
                 <form action="/signup" method="post" id="signup-form">
-                    <div class="input_container">
+                    <!-- <div class="input_container">
                         <label for="id">
                             <p>아이디 :</p>
                             <input id="id" type="text" name="id" placeholder="아이디">
                             <span id="id_alert"></span>
                         </label>
-                    </div>
-                    <div class="input_container">
+                    </div> -->
+                    <!-- <div class="input_container">
                         <label for="pw">
                             <p>비밀번호 :</p>
                             <input id="pw" type="password" name="pw" placeholder="비밀번호">
@@ -242,14 +234,14 @@
                             <input id="confirm_pw" type="password" name="pw" placeholder="비밀번호 확인">
                             <span id="confirm_pw_alert"></span>
                         </label>
-                    </div>
-                    <div class="input_container">
+                    </div> -->
+                    <!-- <div class="input_container">
                         <label for="confirm_username">
                             <p>이름 :</p>
                             <input id="confirm_username" type="text" name="username" placeholder="이름">
                             <span id="confirm_username"></span>
                         </label>
-                    </div>
+                    </div> -->
                     <div class="input_container">
                         <label for="confirm_birth">
                             <p>생년월일 :</p>
@@ -274,7 +266,7 @@
                         <input id="tel_last" type="text" name="tel_last" placeholder="0000">
                         <span id="confirm_tel"></span>
                     </div>
-                    <div class="input_container">
+                    <!-- <div class="input_container">
                         <p>이메일 :</p>
                         <input id="email_first" type="text" name="email_first" placeholder="이메일">
                         <span>@</span>
@@ -287,7 +279,7 @@
                             <option value="hanmail.net">hanmail.net</option>
                         </select>
                         <span id="confirm_tel"></span>
-                    </div>
+                    </div> -->
                     <div class="input_container">
                         <p>주소 :</p>
                         <input type="text" id="sample4_postcode" placeholder="우편번호">
@@ -395,6 +387,6 @@
     </footer>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="../static/script/index.js"></script>
-    <script src="../static/script/signup.js"></script>
+    <script src="../static/script/signadd.js"></script>
 </body>
 </html>
