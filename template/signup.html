@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -11,9 +13,9 @@
 
     <link rel="stylesheet" href="../static/css/reset.css">
     <link rel="stylesheet" href="../static/css/layout.css">
-    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="stylesheet" href="../static/css/signup.css">
     
-    <title>로그인 - 제주특별자치도 공공도서관</title>
+    <title>회원가입 - 제주특별자치도 공공도서관</title>
 </head>
 <body>
     <header>
@@ -204,65 +206,103 @@
             <h2>마이페이지</h2>
         </section>
         <section class="main_contents">
-            <h2>로그인</h2>
+            <!-- SNS 회원가입 추가 입력 시 변경사항 -->
+            <!-- goole sns 가입 시 리다이렉션페이지는 login페이지와 동일하지만 페이지title, id, pw, 이름, email input태그를 입력불가로 변경합니다. -->
+            
+            <!-- 페이지 title 변경사항 -->
+            <h2>회원가입</h2>
+                <!-- 
+                    <h2>구글 회원가입 추가정보</h2>
+                 -->
+            <!-- 페이지 title 변경사항 끝 -->
             <ul class="breadcrumb">
                 <li><a href="#">HOME</a></li>
                 <li><a class="breadcrumb_item" href="#">마이페이지</a></li>
-                <li><a class="breadcrumb_item" href="#">로그인</a></li>
+                <li><a class="breadcrumb_item" href="#">회원가입</a></li>
             </ul>
-            <h3>제주특별자치도 통합 로그인</h3>
-            <img class="center" src="../static/images/login/top_login_img.png" alt="" width="182px" height="160px">
-            <div class="text_center">
-                <p class="text_primary"><strong>제주특별자치도의 홈페이지 이용이 편리해졌습니다.</strong></p>
-                <p class="text_height">
-                    제주특별자치도에서는 회원정보보호를 강화하고 <span class="text_success">제주특별자치도 홈페이지에서 운영 중인 행정시, 포탈홈페이지</span>를
-                    <br>
-                    하나의 <span class="text_success">통합 아이디</span>로 간편하게 이용할 수 있는 단일로그인 서비스를 시행합니다.
-                </p>
+            <div class="sign_up">
+                <form action="/signup" method="post" id="signup-form">
+                    <div class="input_container">
+                        <label for="id">
+                            <p>아이디 :</p>
+                            <input id="id" type="text" name="id" placeholder="아이디">
+                            <span id="id_alert"></span>
+                        </label>
+                    </div>
+                    <div class="input_container">
+                        <label for="pw">
+                            <p>비밀번호 :</p>
+                            <input id="pw" type="password" name="pw" placeholder="비밀번호">
+                            <span id="pw_alert"></span>
+                        </label>
+                    </div>
+                    <div class="input_container">
+                        <label for="confirm_pw">
+                            <p>비밀번호 확인 :</p>
+                            <input id="confirm_pw" type="password" name="pw" placeholder="비밀번호 확인">
+                            <span id="confirm_pw_alert"></span>
+                        </label>
+                    </div>
+                    <div class="input_container">
+                        <label for="confirm_username">
+                            <p>이름 :</p>
+                            <input id="confirm_username" type="text" name="username" placeholder="이름">
+                            <span id="confirm_username"></span>
+                        </label>
+                    </div>
+                    <div class="input_container">
+                        <label for="confirm_birth">
+                            <p>생년월일 :</p>
+                                <select class="box" id="birth_year">
+                                    <option disabled selected>출생 연도</option>
+                                </select>
+                                <select class="box" id="birth_month">
+                                    <option disabled selected>월</option>
+                                </select>
+                                <select class="box" id="birth_day">
+                                    <option disabled selected>일</option>
+                                </select>
+                            <span id="confirm_birth"></span>
+                        </label>
+                    </div>
+                    <div class="input_container">
+                        <p>연락처 :</p>
+                        <input id="tel_first" type="text" name="tel_first" placeholder="000">
+                        <span>-</span>
+                        <input id="tel_middle" type="text" name="tel_middle" placeholder="0000">
+                        <span>-</span>
+                        <input id="tel_last" type="text" name="tel_last" placeholder="0000">
+                        <span id="confirm_tel"></span>
+                    </div>
+                    <div class="input_container">
+                        <p>이메일 :</p>
+                        <input id="email_first" type="text" name="email_first" placeholder="이메일">
+                        <span>@</span>
+                        <input id="email_last" type="text" name="email_last" placeholder="email.com">
+                        <select name="select_email" id="select_email">
+                            <option disabled selected>이메일</option>
+                            <option value="naver.com">naver.com</option>
+                            <option value="gmail.com">gmail.com</option>
+                            <option value="daum.net">daum.net</option>
+                            <option value="hanmail.net">hanmail.net</option>
+                        </select>
+                        <span id="confirm_tel"></span>
+                    </div>
+                    <div class="input_container">
+                        <p>주소 :</p>
+                        <input type="text" id="sample4_postcode" placeholder="우편번호">
+                        <input type="button" id="search_post" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+                        <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+                        <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+                        <span id="guide" style="color:#999;display:none"></span><br>
+                        <input type="text" id="sample4_detailAddress" placeholder="상세주소">
+                        <input type="text" id="sample4_extraAddress" placeholder="참고항목">
+                    </div>
+                    <button id="submit">회원가입</button>
+                </form>
             </div>
-            <div class="green_box">
-                <p>
-                    제주특별자치도 로그인 페이지 입니다. 회원이 아닌 분은 아래의 [회원가입] 버튼을 누르세요.
-                    <br>
-                    휴대폰 본인인증 / 간편인증 / 아이핀 인증을 통해 본인 확인 과정을 거쳐 회원으로 가입 할 수 있습니다.
-                </p>
-            </div>
-            <div class="login_page">
-                <div class="login_container">
-                    <form action="/login" method="post" class="login_form" >
-                        <div class="input_container">
-                            <input id ="id" name="username" type="text" placeholder="아이디"/>
-                            <input id ="password" name="password" type="password" placeholder="비밀번호"/>
-                        </div>
-                        <button>로그인</button>
-                    </form>
-                </div>
-            </div>
-            <div class="find_login">
-                <div class="find_box">
-                    <h5>공공도서관 회원이 아니세요?</h5>
-                    <a href="/template/signup.html">회원가입</a>
-                </div>
-
-                <div class="find_box">
-                    <h5>아이디를 분실하셨나요?</h5>
-                    <a href="#">아이디 찾기</a>
-                </div>
-
-                <div class="find_box">
-                    <h5>비밀번호를 분실하셨나요?</h5>
-                    <a href="#">비밀번호 찾기</a>
-                </div>
-            </div>
-            <h3 class="sns_title">SNS 로그인</h3>
-            <div class="sns_login">
-                <a href="/oauth2/authorization/google">
-                    <img src="../static/images/login/google.png" alt="" width="20px" height="20px">    
-                    구글 로그인
-                </a>
-            </div>
-            <!-- <a href="/oauth2/authorization/google">구글 로그인</a> -->
         </section>
+        
     </main>
     <!-- 푸터 -->
     <footer>
@@ -353,10 +393,8 @@
             </div>
         </div>
     </footer>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="../static/script/index.js"></script>
-    <script src="../static/script/login.js"></script>
+    <script src="../static/script/signup.js"></script>
 </body>
 </html>
-
-
-

@@ -1,0 +1,106 @@
+main {
+    margin: 0 auto;
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+}
+.main_title {
+    display: block;
+    padding: 30px 0;
+    width: 300px;
+    padding-right: 25px;
+    height: 100px;
+    border-bottom: 5px solid black;
+}
+.main_title > h2 {
+    width: 275px;
+    letter-spacing: 2px;
+    font-size: 25px;
+    font-weight: 500;
+}
+.main_contents {
+    width: 100%;
+    padding-left: 25px;
+}
+.main_contents > h2 {
+    width: 100%;
+    padding: 40px 0 15px;
+    font-size: 34px;
+    color: #1d1d1d;
+}
+.breadcrumb {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.bread_container {
+    margin-bottom: 20px;
+}
+.breadcrumb li {
+    margin-right: 20px;
+}
+.breadcrumb_item {
+    position: relative;
+}
+.breadcrumb_item::before{
+    position: absolute;
+    left: -15px; 
+    top: 10px; 
+    content: '';
+    width: 5px; /* 사이즈 */
+    height: 5px; /* 사이즈 */
+    border-top: 1px solid #000; /* 선 두께 */
+    border-right: 1px solid #000; /* 선 두께 */
+    transform: rotate(45deg); /* 각도 */
+}
+#signup-form {
+    width: 100%;
+}
+.sign_up {
+    padding: 20px;
+}
+.input_container {
+    margin-bottom: 20px;
+}
+.input_container input {
+    margin-bottom: 10px;
+    font-size: 18px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #1d1d1d;
+}
+.input_container p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+select {
+    width: 80px;
+    height: 30px;
+    margin-right: 10px;
+}
+#tel_first, #tel_middle, #tel_last {
+    width: 70px;
+    font-size: 18px;
+}
+#sample4_roadAddress, #sample4_jibunAddress {
+    width: 400px;
+}
+#sample4_extraAddress {
+    width: 300px;
+}
+#search_post {
+    width: 150px;
+}
+#submit {
+    width: 200px;
+    height: 50px;
+    border: none;
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+}
