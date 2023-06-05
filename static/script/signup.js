@@ -89,7 +89,6 @@ function signupForm () {
             return
         }
         
-        
         fetch('/signup', {
             method: 'POST',
             headers: {
@@ -112,10 +111,10 @@ function signupForm () {
         if (value.length === 0) {
             alertText.textContent = "";
         } else if (value === pw.value) {
-            alertText.textContent = '비밀번호가 일치합니다.'
+            alertText.textContent = '비밀번호가 일치합니다.';
             alertText.style.color = 'green';
         } else {
-            alertText.textContent = '비밀번호가 일치하지 않습니다.'
+            alertText.textContent = '비밀번호가 일치하지 않습니다.';
             alertText.style.color = 'red';
         }
     });
@@ -319,3 +318,5 @@ function sample4_execDaumPostcode() {
 
 
 signupForm();
+
+

@@ -14,6 +14,7 @@ const extraAddressInput = document.querySelector('#sample4_extraAddress');
 const alertText = document.querySelector('#confirm_pw_alert');
 const genderInputAll = document. querySelectorAll('.gender_radio');
 const submit = document.querySelector('#signup-form');
+const username = document.querySelector('#confirm_username');
 
 const addressInfo = {
     zonecode: "",
@@ -43,10 +44,16 @@ function signupForm () {
         addressInfo.jibunAddress = jibunAddressInput.value;
         addressInfo.detail = detailAddressInput.value;
         const data = {
+            username: username.value,
             phoneNumber: phoneNumber,
             birth: birthDate,
             gender: selectedGender(),
             addressInfo: addressInfo,
+        }
+        console.log(data);
+        if(username.value.length === 0) {
+            alert('이름을 확인해주세요.');
+            return
         }
         if(!Number(selectYear.value) || !Number(selectMonth.value) || !Number(selectDay.value)) {
             alert('생년월일을 확인해주세요.');
