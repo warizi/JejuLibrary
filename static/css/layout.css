@@ -21,7 +21,7 @@ html {
     justify-content: right;
     align-items: center;
 }
-.login_A {
+.top_username {
     width: 105px;
     height: 30px;
     background-color: rgb(0, 131, 57);
@@ -29,14 +29,29 @@ html {
     border: none;
     margin-right: 10px;
 }
-.login_B {
+.login {
     width: 68px;
     height: 30px;
     border: none;
     background-color: #0062c4;
     border-radius: 15px;
 }
-.login_A > a, .login_B > a {
+.logout {
+    width: 68px;
+    height: 30px;
+    border: none;
+    background-color: #0062c4;
+    border-radius: 15px;
+}
+.member_info {
+    width: 100px;
+    height: 30px;
+    border: none;
+    background-color: #0062c4;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+.top_link {
     color: white;
     font-size: 1.3em;
     font-weight: 500;

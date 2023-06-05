@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -13,15 +11,15 @@
 
     <link rel="stylesheet" href="../static/css/reset.css">
     <link rel="stylesheet" href="../static/css/layout.css">
-    <link rel="stylesheet" href="../static/css/signup.css">
+    <link rel="stylesheet" href="../static/css/booklist.css">
     
-    <title>sns추가정보 - 제주특별자치도 공공도서관</title>
+    <title>책 리스트</title>
 </head>
 <body>
     <header>
         <div class="header_nav_container">
             <h1>
-                <a href="/template/index.html">
+                <a href="#">
                     <img id="main_logo" src="../static/images/index/logo.png" alt="제주특별자치도 공공도서관">
                 </a>
             </h1>
@@ -202,78 +200,156 @@
     </header>
     <!-- main -->
     <main>
-        <section class="main_title">
-            <h2>마이페이지</h2>
-        </section>
-        <section class="main_contents">
-            <h2>SNS 회원가입 추가정보</h2>
-            <ul class="breadcrumb">
-                <li><a href="#">HOME</a></li>
-                <li><a class="breadcrumb_item" href="#">마이페이지</a></li>
-                <li><a class="breadcrumb_item" href="#">SNS 회원가입 추가정보</a></li>
-            </ul>
-            <div class="sign_up">
-                <form action="/signup" method="post" id="signup-form">
-                    <div class="input_container">
-                        <label for="confirm_username">
-                            <p>이름</p>
-                            <input id="confirm_username" type="text" name="username" placeholder="이름">
-                            <span id="confirm_username"></span>
-                        </label>
+        <section class="section_main">
+            <h3>책 리스트</h3>
+            <p>HOME > 책 리스트</p>
+            <hr>
+            <div class="search_book_container">
+                <div class="input_search_container">
+                    <form action="">
+                        <label for="book_search" class="hide_label">검색입력</label>
+                        <input class="input_book" id="book_search" type="text" placeholder="찾고자 하는 도서를 검색하세요!">
+                        <button class="search_btn">
+                            <img src="../static/images/icon/magnifying-glass.png" alt="검색하기">
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- 북 리스트 -->
+            <div class="book_list_container"> 
+                <!-- 책 리스트 아이템 컴포넌트 시작 -->
+                <!-- 
+                    <div class="book_item_container">
+                        <div class="book_img_container">
+                            <a href="[디테일 정보 페이지 url]">                               <------ href에 해당 책 디테일 정보 페이지 url 넣어주세요.
+                                <img src="[책 이미지 url]" alt="책 커버">                    <----- src에 해당 책 image url 넣어주세요.
+                            </a>
+                        </div>
+                        <div class="book_contents_container">
+                            <a href="[디테일 정보 페이지 url]">                               <------ href에 해당 책 디테일 정보 페이지 url 넣어주세요.
+                                <p>[책 제목]</p>                                           <--- 제목 넣어주세요.
+                            </a>
+                            <ul>
+                                <li>
+                                    <strong>저자</strong>
+                                    <span>[저자 넣어주세요.]</span>                           <----- 저자 넣어주세요.
+                                </li>
+                                <li>
+                                    <strong>출판정보</strong>
+                                    <span>[출판정보 넣어주세요.]</span>                                  <-----출판정보 넣어주세요.
+                                </li>
+                                <li>
+                                    <strong>ISBN</strong>
+                                    <span>[ISBN 넣어주세요.]</span>                                   <----- ISBN 넣어주세요.
+                                </li>
+                                <li>
+                                    <strong>분류</strong>
+                                    <span>[분류 넣어주세요.]</span>                             <----- 분류 넣어주세요.
+                                </li>
+                            </ul>
+                            <div class="item_count_label">
+                                소장
+                                <strong class="[posible_color]">[숫자]권</strong>                      <----- 소장 숫자 넣어주세요. 숫자가 0이 아니면 Class에 posible_color 넣어주세요. 0이면 imposible_color 넣어주세요.
+                            </div>
+                            <div class="item_count_label">
+                                대출가능
+                                <strong class="[imposible_color]">[숫자]권</strong>                           <----- 대출가능 숫자 넣어주세요. 숫자가 0이 아니면 Class에 posible_color 넣어주세요. 0이면 imposible_color 넣어주세요.
+                            </div>
+                            <div class="item_count_label">
+                                <a href="#">관심도서</a> 
+                            </div>
+                        </div>
+                    </div> 
+                -->
+                <!-- 책 리스트 아이템 컴포넌트 끝 -->
+                <div class="book_item_container">
+                    <div class="book_img_container">
+                        <a href="#"><img src="../static/images/testbook.jpeg" alt="책 커버"></a>
                     </div>
-                    <div class="input_container">
-                        <label for="confirm_username">
-                            <p>성별</p>
-                            <label for="gender_male">
-                               <span>남자</span>
-                                <input class="gender_radio" id="gender_male" type="radio" name="gender" value="남자" checked>
-                            </label>
-                            <label for="gender_female">
-                                <span>여자</span>
-                                <input class="gender_radio" id="gender_female" type="radio" name="gender" value="여자">
-                            </label>
-                            <span id="confirm_username"></span>
-                        </label>
+                    <div class="book_contents_container">
+                        <a href="#"><p>[총류] (한 권으로 읽는) 컴퓨터 구조와 프로그래밍 : 더 나은 소프트웨어 개발을 위한 하드웨어, 자료구조, 필수 알고리즘 등 프로그래머의 비밀 노트</p></a>
+                        <ul>
+                            <li>
+                                <strong>저자</strong>
+                                <span>조너선 스타인하트 지음;오현석 옮김</span>
+                            </li>
+                            <li>
+                                <strong>출판정보</strong>
+                                <span>책만,2021,인쇄자료(책자형)</span>
+                            </li>
+                            <li>
+                                <strong>ISBN</strong>
+                                <span>9791189909284</span>
+                            </li>
+                            <li>
+                                <strong>분류</strong>
+                                <span>[L문004.22-스831ㅋ] 총류>총류>전산학</span>
+                            </li>
+                        </ul>
+                        <div class="item_count_label">
+                            소장
+                            <strong class="posible_color">1권</strong>
+                        </div>
+                        <div class="item_count_label">
+                            대출가능
+                            <strong class="imposible_color">50권</strong>
+                        </div>
+                        <div class="item_count_label">
+                            <a href="#">관심도서</a> 
+                        </div>
                     </div>
-                    <div class="input_container">
-                        <label for="confirm_birth">
-                            <p>생년월일 :</p>
-                                <select class="box" id="birth_year">
-                                    <option disabled selected>출생 연도</option>
-                                </select>
-                                <select class="box" id="birth_month">
-                                    <option disabled selected>월</option>
-                                </select>
-                                <select class="box" id="birth_day">
-                                    <option disabled selected>일</option>
-                                </select>
-                            <span id="confirm_birth"></span>
-                        </label>
-                    </div>
-                    <div class="input_container">
-                        <p>연락처 :</p>
-                        <input id="tel_first" type="text" name="tel_first" placeholder="000">
-                        <span>-</span>
-                        <input id="tel_middle" type="text" name="tel_middle" placeholder="0000">
-                        <span>-</span>
-                        <input id="tel_last" type="text" name="tel_last" placeholder="0000">
-                        <span id="confirm_tel"></span>
-                    </div>
-                    <div class="input_container">
-                        <p>주소 :</p>
-                        <input type="text" id="sample4_postcode" placeholder="우편번호">
-                        <input type="button" id="search_post" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-                        <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
-                        <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
-                        <span id="guide" style="color:#999;display:none"></span><br>
-                        <input type="text" id="sample4_detailAddress" placeholder="상세주소">
-                        <input type="text" id="sample4_extraAddress" placeholder="참고항목">
-                    </div>
-                    <button id="submit">회원가입</button>
-                </form>
+                </div>
             </div>
         </section>
-        
+        <section class="section_nav">
+            <div class="section_nav_container">
+                <h2>자료검색</h2>
+                <ul>
+                    <li class="selected_nav">
+                        <h3>자료검색</h3>
+                        <ul>
+                            <li><a href="#">간략검색</a></li>
+                            <li><a href="#">상세검색</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>희망도서 신청</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>희망도서 바로대출</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>대출조회</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>책두레</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>신간도서</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>추천도서</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>(한라) AI도서추천</h3>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </main>
     <!-- 푸터 -->
     <footer>
@@ -364,8 +440,6 @@
             </div>
         </div>
     </footer>
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="../static/script/index.js"></script>
-    <script src="../static/script/signadd.js"></script>
 </body>
 </html>

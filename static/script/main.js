@@ -39,8 +39,8 @@ function sideMenu () {
 //슬라이드
 function slideFn () {
     const slideWidth = slideContainer.clientWidth;
-    let slideCalc = (slideWidth + 15) / 305;
-    const slideCount = Math.round(slideCalc);
+    const slideItemWidth = 305;
+    const slideCount = slideWidth / slideItemWidth;
     totalNum.textContent = slideCount;
 
     //슬라이드 복제 (무한루프 모방)
@@ -62,7 +62,7 @@ function slideFn () {
         slideContainer.style.transform = `translateX(${slideTranslate}px)`;
     }
     // 이전 슬라이드
-    function prevFn () {
+    function goToPrevSlide () {
         if(btnCount > 1 && btnDisabled) {
             btnCount -= 1;
             slideTranslate += 305;
@@ -74,8 +74,8 @@ function slideFn () {
             slideTranslate = -(slideWidth + 305);
         }
     }
-    // 다음 슬라이드
-    function nextFn () {
+    // 다음 슬라이드 기능
+    function goToNextSlide () {
         if(btnCount < slideCount && btnDisabled) {
             btnCount += 1;
             slideTranslate -= 305;
@@ -88,7 +88,7 @@ function slideFn () {
     }
     // 애니메이션 동작중일 때 버튼 조작 못하게 (무한루프 구현 위해서)
     slideContainer.addEventListener('transitionend', () => {
-        //transition-delay가 끝날 때 좌우 end-point에서 초기화
+        //transition-delay가 끝날 때 좌우 슬라이드 위치 조정
         if (btnCount === 1) {
             slideTranslate = -305;
             slideControler('0s', slideTranslate);
@@ -99,14 +99,14 @@ function slideFn () {
         //다시 버튼 활성화
         btnDisabled = true;
     })
-    //버튼 이벤트리스너
+    //버튼에 기능 할당
     prevBtn.addEventListener('click', () => {
-        prevFn();
+        goToPrevSlide();
         clearTimeout(slideAuto);
         slideAutoFn();
     });
     nextBtn.addEventListener('click', () => {
-        nextFn();
+        goToNextSlide();
         clearTimeout(slideAuto);
         slideAutoFn();
     });
@@ -115,7 +115,7 @@ function slideFn () {
     let slideAuto ;
     function slideAutoFn () {
         slideAuto = setTimeout(() => {
-            nextFn();
+            goToNextSlide();
             slideAutoFn();
         }, 5000)
     }

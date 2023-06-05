@@ -224,35 +224,49 @@
                 <form action="/signup" method="post" id="signup-form">
                     <div class="input_container">
                         <label for="id">
-                            <p>아이디 :</p>
+                            <p>아이디</p>
                             <input id="id" type="text" name="id" placeholder="아이디">
                             <span id="id_alert"></span>
                         </label>
                     </div>
                     <div class="input_container">
                         <label for="pw">
-                            <p>비밀번호 :</p>
+                            <p>비밀번호</p>
                             <input id="pw" type="password" name="pw" placeholder="비밀번호">
                             <span id="pw_alert"></span>
                         </label>
                     </div>
                     <div class="input_container">
                         <label for="confirm_pw">
-                            <p>비밀번호 확인 :</p>
+                            <p>비밀번호 확인</p>
                             <input id="confirm_pw" type="password" name="pw" placeholder="비밀번호 확인">
                             <span id="confirm_pw_alert"></span>
                         </label>
                     </div>
                     <div class="input_container">
                         <label for="confirm_username">
-                            <p>이름 :</p>
+                            <p>이름</p>
                             <input id="confirm_username" type="text" name="username" placeholder="이름">
                             <span id="confirm_username"></span>
                         </label>
                     </div>
                     <div class="input_container">
+                        <label for="confirm_username">
+                            <p>성별</p>
+                            <label for="gender_male">
+                               <span>남자</span>
+                                <input class="gender_radio" id="gender_male" type="radio" name="gender" value="남자" checked>
+                            </label>
+                            <label for="gender_female">
+                                <span>여자</span>
+                                <input class="gender_radio" id="gender_female" type="radio" name="gender" value="여자">
+                            </label>
+                            <span id="confirm_username"></span>
+                        </label>
+                    </div>
+                    <div class="input_container">
                         <label for="confirm_birth">
-                            <p>생년월일 :</p>
+                            <p>생년월일</p>
                                 <select class="box" id="birth_year">
                                     <option disabled selected>출생 연도</option>
                                 </select>
@@ -266,7 +280,7 @@
                         </label>
                     </div>
                     <div class="input_container">
-                        <p>연락처 :</p>
+                        <p>연락처</p>
                         <input id="tel_first" type="text" name="tel_first" placeholder="000">
                         <span>-</span>
                         <input id="tel_middle" type="text" name="tel_middle" placeholder="0000">
@@ -275,12 +289,12 @@
                         <span id="confirm_tel"></span>
                     </div>
                     <div class="input_container">
-                        <p>이메일 :</p>
+                        <p>이메일</p>
                         <input id="email_first" type="text" name="email_first" placeholder="이메일">
                         <span>@</span>
                         <input id="email_last" type="text" name="email_last" placeholder="email.com">
                         <select name="select_email" id="select_email">
-                            <option disabled selected>이메일</option>
+                            <option selected>직접입력</option>
                             <option value="naver.com">naver.com</option>
                             <option value="gmail.com">gmail.com</option>
                             <option value="daum.net">daum.net</option>
@@ -289,7 +303,7 @@
                         <span id="confirm_tel"></span>
                     </div>
                     <div class="input_container">
-                        <p>주소 :</p>
+                        <p>주소</p>
                         <input type="text" id="sample4_postcode" placeholder="우편번호">
                         <input type="button" id="search_post" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
                         <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
