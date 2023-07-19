@@ -1,0 +1,68 @@
+.list_container {
+    height: 50px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    line-height: 50px;
+}
+.list_number {
+    width: 5%;
+}
+.list_user {
+    width: 10%;
+}
+.list_book_name {
+    overflow: hidden;
+    width: 25%;
+    padding-right: 10px;
+}
+.list_book_code {
+    width: 10%;
+}
+.list_borrow_date {
+    width: 12%;
+}
+.list_deadline_date {
+    width: 12%;
+}
+.list_register_date {
+    width: 12%;
+}
+.list_state {
+    width: 7%;
+}
+.list_check {
+    width: 7%;
+}
+.list_item {
+    background-color: white;
+    border-bottom: 1px solid #C5C5C5;
+}
+.state_circle {
+    border-radius: 10px;
+    color: white;
+    background-color: blue;
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 10px;
+}
+.state_overdue {
+    background-color: #DC4E4E;
+}
+.state_cancel {
+    background-color: #C96BEB;
+}
+.btn_check {
+    width: 60px;
+    height: 30px;
+    color: white;
+    background-color: #357EEC;
+    border: none;
+    border-radius: 10px;
+    line-height: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+}
