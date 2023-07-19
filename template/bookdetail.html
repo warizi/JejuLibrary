@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/bookdetail.css">
+    
+    <title>책 정보</title>
+</head>
+<body>
+    <!-- 헤더 -->
+    <div class="top_section">
+        <!-- 로그인 시 변경 사항 -->
+        <!-- 변경 전 -->
+        <th:block th:if="${userRealName == null}">
+            <div class="top_section_container">
+                <!-- 로그인 페이지 이동 -->
+                <button class="login"><a class="top_link" href="/login">로그인</a></button>
+            </div>
+        </th:block>
+        <th:block th:if="${userRealName != null}">
+            <div class="top_section_container">
+                <div class="today_borrow borrow_count">
+                    <strong>금일 대출 :</strong>
+                    <span th:text="${bookCount.getTodayBookString()}">/span>
+                </div>
+                <div class="total_borrow borrow_count">
+                    <strong>총 대출 :</strong>
+                    <span th:text="${bookCount.getTotalBookString()}">/span>
+                </div>
+                <button class="top_username"><a class="top_link" href="#"><div th:text="${userRealName}"></div></a></button>
+                <button class="member_info"><a class="top_link" href="#">회원정보 수정</a></button>
+                <button class="logout"><a class="top_link" href="/logout">로그아웃</a></button>
+            </div>
+        </th:block>
+    </div>
+    <header>
+        <div class="header_nav_container">
+            <h1>
+                <a href="/">
+                    <img id="main_logo" src="/images/index/logo.png" alt="제주특별자치도 공공도서관">
+                </a>
+            </h1>
+            <!-- 네비게이션 -->
+            <div class="not_all_menu">
+                <div class="back_btn">
+                    닫기
+                </div>
+                <nav>
+                    <div class="nav_title nav1">
+                        <h3>
+                            <a href="#">자료검색</a>
+                        </h3>
+                        <!-- 하위 nav -->
+                        <div class="depth_nav">
+                            <ul>
+                                <li><a href="#">자료검색</a></li>
+                                <li><a href="#">희망도서 신청</a></li>
+                                <li><a href="#">희망도서 바로대출</a></li>
+                                <li><a href="#">대출조회</a></li>
+                                <li><a href="#">책두레</a></li>
+                                <li><a href="#">신간도서</a></li>
+                                <li><a href="#">추천도서</a></li>
+                                <li><a href="#">(한라)AI도서추천</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav_title nav2">
+                        <h3>
+                            <a href="#">도서관이용</a>
+                        </h3>
+                        <!-- 하위 nav -->
+                        <div class="depth_nav">
+                            <ul>
+                                <li><a href="#">도서관별 운영시간</a></li>
+                                <li><a href="#">도서관별 휴관일</a></li>
+                                <li><a href="#">도서관별 연락처</a></li>
+                                <li><a href="#">전체도서관 위치</a></li>
+                                <li><a href="#">전체 장서현황</a></li>
+                                <li><a href="#">회원가입안내</a></li>
+                                <li><a href="#">대출/반납안내</a></li>
+                                <li><a href="#">타관반납서비스</a></li>
+                                <li><a href="#">모바일 라이브러리 서비스</a></li>
+                                <li><a href="#">책나래</a></li>
+                                <li><a href="#">책바다</a></li>
+                                <li><a href="#">자료납본제출안내</a></li>
+                                <li><a href="#">스마트도서관안내</a></li>
+                                <li><a href="#">스마트K도서관</a></li>
+                                <li><a href="#">도서관 이용 약관</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav_title nav3">
+                        <h3>
+                            <a href="#">행사/프로그램</a>
+                        </h3>
+                        <div class="depth_nav">
+                            <ul>
+                                <li><a href="#">도서관 프로그램 신청</a></li>
+                                <li><a href="#">행사갤러리</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav_title nav4">
+                        <h3>
+                            <a href="#">열린공간</a>
+                        </h3>
+                        <!-- 하위 nav -->
+                        <div class="depth_nav">
+                            <ul>
+                                <li><a href="#">새소식</a></li>
+                                <li><a href="#">보도자료</a></li>
+                                <li><a href="#">자주하는질문</a></li>
+                                <li><a href="#">도서관 바란다</a></li>
+                                <li><a href="#">업무계획</a></li>
+                                <li><a href="#">자료실</a></li>
+                                <li><a href="#">자원봉사안내</a></li>
+                                <li><a href="#">2023서귀포시민의책 추천</a></li>
+                                <li><a href="#">칭찬합시다</a></li>
+                                <li><a href="#">분실물 찾기</a></li>
+                                <li><a href="#">프로그램 강사모집</a></li>
+                                <li><a href="#">카드뉴스</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav_title nav5">
+                        <h3>
+                            <a href="#">도서관소개</a>
+                        </h3>
+                        <!-- 하위 nav -->
+                        <div class="depth_nav">
+                            <ul>
+                                <li><a href="#">한라도서관</a></li>
+                                <li><a href="#">우당도서관</a></li>
+                                <li><a href="#">탐라도서관</a></li>
+                                <li><a href="#">제주기적의도서관</a></li>
+                                <li><a href="#">애월도서관</a></li>
+                                <li><a href="#">조천읍도서관</a></li>
+                                <li><a href="#">한경도서관</a></li>
+                                <li><a href="#">삼매봉도서관</a></li>
+                                <li><a href="#">중앙도서관</a></li>
+                                <li><a href="#">동부도서관</a></li>
+                                <li><a href="#">서부도서관</a></li>
+                                <li><a href="#">서귀포기적의도서관</a></li>
+                                <li><a href="#">성산일출도서관</a></li>
+                                <li><a href="#">안덕산방도서관</a></li>
+                                <li><a href="#">표선도서관</a></li>
+                                <li><a href="#">행정서비스현장</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav_title nav6">
+                        <h3>
+                            <a href="#">나만의 도서관</a>
+                        </h3>
+                        <!-- 하위 nav -->
+                        <div class="depth_nav">
+                            <ul>
+                                <li><a href="#">대출회원 정보</a></li>
+                                <li><a href="#">대출조회</a></li>
+                                <li><a href="#">희망도서 신청</a></li>
+                                <li><a href="#">대출예약현황</a></li>
+                                <li><a href="#">타관대출현황</a></li>
+                                <li><a href="#">관심도서</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <img class="side_menu_btn" src="/images/icon/menu.png" alt="사이드 메뉴">
+        </div>
+        <!-- search -->
+        <div class="search">
+            <div class="search_container">
+                <div class="search_info_container search_box">
+                    <img src="/images/index/img.png" alt="책 사진">
+                    <h3>
+                        책과 문화를 즐기는
+                        <br>
+                        <strong>제주특별자치도 공공도서관</strong>
+                    </h3>
+                    <p>
+                        제주특별자치도 공공도서관에 오신 것을 환영합니다.
+                        <br>
+                        책과 문화를 함께 즐기세요!
+                    </p>
+                </div>
+                <div class="search_input_container search_box">
+                    <img src="/images/index/sch_img.png" alt="책 사진">
+                    <h3>
+                        원하시는
+                        <br>
+                        <strong>도서명을 검색하세요</strong>
+                    </h3>
+                    <form action="#">
+                        <input type="text" id="search">
+                        <button id="search_sumit_btn">
+                            <img src="/images/icon/magnifying-glass.png" alt="검색하기">
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- quick menu -->
+        <div class="quick_menu">
+            <a id="quick_con_bg1" href="#">
+                <div id="quick_menu_bg1"></div>
+                <p>도서관 <br> 이용안내</p>
+            </a>
+            <a id="quick_con_bg2" href="#">
+                <div id="quick_menu_bg2"></div>
+                <p>도서관 <br> 소개</p>
+            </a>
+            <button id="top_btn">
+                TOP
+            </button>
+        </div>
+    </header>
+    <!-- main -->
+    <main>
+        <section class="section_main">
+            <h3>책 정보</h3>
+            <p>HOME > 책 정보</p>
+            <hr>
+            <div class="search_book_container">
+                <div class="input_search_container">
+                    <form action="">
+                        <label for="book_search" class="hide_label">검색입력</label>
+                        <input class="input_book" id="book_search" type="text" placeholder="찾고자 하는 도서를 검색하세요!">
+                        <button class="search_btn">
+                            <img src="/images/icon/magnifying-glass.png" alt="검색하기">
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- 북 디테일 -->
+            <div class="book_detail">
+                <div class="detail_top detail_container">
+                    <img th:src="${bookInfo.getImageUrl()}" id="book_cover">
+                    <div class="detail_top_text">
+                        <p th:text="${bookInfo.getTitle()}" id="book_title"></p>
+                        <ul>
+                            <li>
+                                <strong>- 저자</strong>
+                                <span th:text="${bookInfo.getAuthor()}" id="book_author"></span>
+                            </li>
+                            <li>
+                                <strong>- 출판정보</strong>
+                                <span th:text="${bookInfo.getPublishingInfo()}"></span>
+                            </li>
+                            <li>
+                                <strong>- ISBN</strong>
+                                <span th:text="${bookInfo.getIsbn()}"></span>
+                            </li>
+                            <li>
+                                <strong>- 분류</strong>
+                                <span th:text="${bookInfo.getCategory()}"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail_middle detail_container">
+                    <h4>소장 정보</h4>
+                    <!-- 소장 정보 item 시작 -->
+                    <th:block th:each="collectInfo:${bookInfo.getBookCollectionInfos()}">
+                        <div class="collection_info">
+                            <span class="book_code">
+                                등록코드:
+                                <strong th:text="${collectInfo.getRegistrationCode()}" id="book_code"></strong>
+                            </span>
+                            <span class="book_borrow_posible">
+                                <th:block th:if="${collectInfo.isBorrow()}">
+                                    <form action="/book/borrow" method="POST">
+                                        <input type="hidden" name="registrationCode" th:value="${collectInfo.getRegistrationCode()}">
+                                        <input type="hidden" name="bookId" th:value="${bookInfo.getId()}">
+                                        <button type="submit" th:id="code_+${collectInfo.getRegistrationCode()}" class="borrow_posible_btn">대출하기</button>
+                                    </form>
+                                    <div class="add_cart" th:data-bookId="${bookInfo.getId()}" th:data-registrationCode="${collectInfo.getRegistrationCode()}">장바구니 담기</div>
+                                    <div class="add_wish" th:data-bookId="${bookInfo.getId()}" th:data-registrationCode="${collectInfo.getRegistrationCode()}">위시리스트 담기</div>
+                                </th:block>
+                                 <th:block th:if="${!collectInfo.isBorrow() && !collectInfo.isMine()}">
+                                     <button class="borrow_imposible_btn">대출불가</button>
+                                </th:block>
+                                <th:block th:if="${!collectInfo.isBorrow() && collectInfo.isMine()}">
+                                     <button class="borrowed_btn">현재 대출 중</button>
+                                </th:block>
+                            </span>
+                        </div>
+                    </th:block>
+                    <!--                     
+                    <div class="collection_info">
+                        <span class="book_code">
+                            등록코드: 
+                            <strong id="book_code">[등록코드 넣어주세요.]</strong>
+                        </span>
+                        <span class="book_borrow_posible">
+                            대출 가능 여부 :              
+                                아래 3가지 중 한가지만 넣어주세요.
+                            <button class="borrow_posible_btn">대출하기</button> 대출 가능한 경우
+                            <button class="borrow_imposible_btn">대출불가</button> 대출 불가능한 경우
+                            <button class="borrowed_btn">현재 대출 중</button> 이미 대출한 경우
+                        </span>
+                    </div> 
+                    -->
+                    <!-- 소장 정보 item 끝 -->
+                </div>
+                <div class="detail_bottom detail_container">
+                    <h4>소개</h4>
+                    <p th:text="${bookInfo.getInformation()}"></p>
+                </div>
+            </div>
+        </section>
+        <section class="section_nav">
+            <div class="section_nav_container">
+                <h2>자료검색</h2>
+                <ul>
+                    <li class="selected_nav">
+                        <h3>자료검색</h3>
+                        <ul>
+                            <li><a href="#">간략검색</a></li>
+                            <li><a href="#">상세검색</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>희망도서 신청</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>희망도서 바로대출</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>대출조회</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>책두레</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>신간도서</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>추천도서</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h3>(한라) AI도서추천</h3>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+    <!-- 푸터 -->
+    <footer>
+        <div class="footer_top">
+            <div class="footer_top_container">
+                <ul class="footer_link_container">
+                   <li><a href="#">책바다</a></li> 
+                   <li><a href="#">책나래</a></li> 
+                   <li><a href="#">책읽는서귀포시</a></li> 
+                   <li><a href="#">책이음서비스</a></li> 
+                   <li><a href="#">책섬,제주</a></li> 
+                </ul>
+                <div class="site_list">
+                    <span>관련사이트</span>
+                    <div class="icon_a">&uarr;</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="footer_phone">
+                <h3>도서관 연락처</h3>
+                <div class="phone_item">
+                    <h4>한라도서관</h4>
+                    <span>064-710-8666</span>
+                </div>
+                <div class="phone_item">
+                    <h4>조천읍도서관</h4>
+                    <span>064-728-1505</span>
+                </div>
+                <div class="phone_item">
+                    <h4>서부도서관</h4>
+                    <span>064-739-9862</span>
+                </div>
+                <div class="phone_item">
+                    <h4>우당도서관</h4>
+                    <span>064-728-1503</span>
+                </div>
+                <div class="phone_item">
+                    <h4>한경도서관</h4>
+                    <span>064-728-1508</span>
+                </div>
+                <div class="phone_item">
+                    <h4>서귀포기적의도서관</h4>
+                    <span>064-732-3251</span>
+                </div>
+                <div class="phone_item">
+                    <h4>탐라도서관</h4>
+                    <span>064-728-1506</span>
+                </div>
+                <div class="phone_item">
+                    <h4>삼매봉도서관</h4>
+                    <span>064-733-1524</span>
+                </div>
+                <div class="phone_item">
+                    <h4>성산일출도서관</h4>
+                    <span>064-783-4227</span>
+                </div>
+                <div class="phone_item">
+                    <h4>제주시기적의도서관</h4>
+                    <span>064-728-1504</span>
+                </div>
+                <div class="phone_item">
+                    <h4>중앙도서관</h4>
+                    <span>064-739-1516</span>
+                </div>
+                <div class="phone_item">
+                    <h4>안덕산방도서관</h4>
+                    <span>064-794-2489</span>
+                </div>
+                <div class="phone_item">
+                    <h4>애월도서관</h4>
+                    <span>064-728-1507</span>
+                </div>
+                <div class="phone_item">
+                    <h4>동부도서관</h4>
+                    <span>064-767-1524</span>
+                </div>
+                <div class="phone_item">
+                    <h4>표선도서관</h4>
+                    <span>064-787-5488</span>
+                </div>
+            </div>
+            <div class="footer_address">
+                <a href="#">개인정보처리방침</a>
+                <br>
+                <a href="#">한라도서관 이용규정</a>
+                <address>Copyright©제주특별자치도 공공도서관. <br> All rights reserced</address>
+            </div>
+        </div>
+    </footer>
+    <script src="/script/index.js"></script>
+    <script type="module" src="/script/bookDetail.js"></script>
+
+</body>
+</html>

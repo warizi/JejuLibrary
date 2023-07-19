@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/admin/adminLayout.css">
+    <link rel="stylesheet" href="/css/admin/checkReturnBooks.css">
+    <title>제주특별자치도 공공도서관 - Admin</title>
+</head>
+<body>
+    <div class="page_container">
+        <nav class="side_bar">
+            <div class="logo_container">
+                <img src="/images/index/jeju_logo.png" alt="제주특별자치도 공공도서관 로고">
+                <strong>제주특별자치도 공공도서관</strong>
+            </div>
+            <div class="category_container">
+                <ul>
+                    <li>
+                        <a class="category_item category_active" href="#">
+                            <div class="category_circle"></div>
+                            <span>반납 도서 확인</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="category_item" href="#">
+                            <div class="category_circle"></div>
+                            <span>신규 도서 등록</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main class="main_contents">
+            <!-- 사용자 변경사항 -->
+            <div class="admin_info">
+                <!-- [000]님 -->
+                아기천사님
+            </div>
+            <h2 class="contants_title">반납도서확인</h2>
+            <div class="contents_container">
+                <div class="contents_inner_container">
+                    <div class="list_container">
+                        <span class="list_number">No.</span>
+                        <span class="list_user">대출자</span>
+                        <span class="list_book_name">책 제목</span>
+                        <span class="list_book_code">등록코드</span>
+                        <span class="list_borrow_date">대출일자</span>
+                        <span class="list_deadline_date">만기일자</span>
+                        <span class="list_check">확인</span>
+                    </div>
+                    <ul class="return_list">
+                        <!-- 반납도서 리스트 컴포넌트 시작 -->
+                        <!-- 각 span안에 변경사항 채워주세요. -->
+                        <li class="list_container list_item">
+                            <div class="list_number">
+                                <!-- 반납도서 Number -->
+                                <span>1</span>
+                            </div>
+                            <div class="list_user">
+                                <!-- 대출자 이름 -->
+                                <span>아기천사</span>
+                            </div>
+                            <div class="list_book_name">
+                                <!-- 책 이름 (20자) -->
+                                <span>책이름입니다얼마나써야넘치는지테스트입니다</span>
+                            </div>
+                            <div class="list_book_code">
+                                <!-- 등록코드 -->
+                                <span>1274673</span>
+                            </div>
+                            <div class="list_borrow_date">
+                                <!-- 대출일자 -->
+                                <span>2023.06.11</span>
+                            </div>
+                            <div class="list_deadline_date">
+                                <!-- 만기일자 -->
+                                <span>2023.06.11</span>
+                            </div>
+                            <div class="list_check">
+                                <button class="btn_check">완료하기</button>
+                            </div>
+                        </li>
+                        <!-- 반납도서 리스트 컴포넌트 끝 -->
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/script/admin/checkReturnBooks.js" type="module"></script>
+</body>
+</html>
